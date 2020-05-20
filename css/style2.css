@@ -1,0 +1,64 @@
+#top{
+    position: relative;
+    height: 30px;
+    padding: 0 70px;
+    background-color: #f1f1f1;
+}
+#top>div{
+    float:left;
+}
+#top .menu{
+    padding: 0 3px;
+    line-height: 30px;
+}
+#top .top-left .location:hover{
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin-left: -1px;
+}
+#top .top-left .location:hover .locationHide{
+    display: block;
+}
+#top .top-right{
+    position: absolute;
+    top:0;
+    right:70px;
+}
+#top .top-right>div{
+    float:left;
+}
+#top .login_register{
+    height: 30px;
+}
+#top .login_register div{
+    float:left;
+    margin-right: 5px;
+}
+#top .navs li{
+    float:left;
+}
+#top .navs .space{
+    width: 1px;
+    height: 12px;
+    background-color: #ccc;
+    margin-top: 9px;
+}
+#top .navs .menu{
+    width: 50px;
+    height: 30px;
+    margin: 0 15px;
+    text-align: center;
+}
+#top .navs .myJD:hover {
+    width: 48px;
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+#top .navs .myJD:hover .abc{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: pink;
+}

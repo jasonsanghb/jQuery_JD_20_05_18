@@ -1,231 +1,91 @@
 <!DOCTYPE html>
-<html xmlns=" http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link href="css/style.css" rel="stylesheet"/>
-	<link href="css/base.css" rel="stylesheet"/>
-	<link rel="shortcut icon" href="./img/favicon.ico">
-	<title>自己开发</title>
-	<script type="text/javascript" src="./js/jquery-1.12.2.min.js"></script>
+    <meta charset="UTF-8">
+    <title>自己做的</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery-1.12.2.min.js"></script>
+    <script src="./js/index.js"></script>
 </head>
+<!--经验：父级设置了line-height后，子级如果浮动，那么该line-height不起作用，解决方法：直接在文字的父元素上设置line-height-->
+<!--经验： hover一个父元素后，展示其中一个隐藏的元素，另一个父元素的子元素是显示的元素-->
+<!--jQuery有hover方法-->
+<!--li之间的小竖线是多加一个li-->
+<!--navs之间的小竖线，我采用的是li的border-left但是这样会导致我需要让小竖线和字体一样高，但是它和li一样高了。模板里面的解决方法是把小竖线单独用一个li来装，这样可以减少耦合性。但是这一步我还没有做-->
+<!--使用原生css最好把宽度和高度都显示地写出来，等内容写完后再把大盒子的宽度删除-->
 <body>
-<!-- 头部导航栏 -->
-	<div id="top">
-		<div class="top-wrap">
-			<ul class="top-city">
-				<li class="dropdown menu"><!-- 添加hover -->
-					<div class="to-city">送至：天津</div>
-					<div class="city-select fn-hide">
-						<div class="white"></div>
-						<div class="city-wrap">
-							<div class="city-item"><a>北京</a></div>
-							<div class="city-item"><a>上海</a></div>
-							<div class="city-item"><a>天津</a></div>
-							<div class="city-item"><a>重庆</a></div>
-							<div class="city-item"><a>河北</a></div>
-							<div class="city-item"><a>山西</a></div>
-							<div class="city-item"><a>河南</a></div>
-							<div class="city-item"><a>辽宁</a></div>
-							<div class="city-item"><a>吉林</a></div>
-							<div class="city-item"><a>黑龙江</a></div>
-							<div class="city-item"><a>内蒙古</a></div>
-							<div class="city-item"><a>江苏</a></div>
-							<div class="city-item"><a>山东</a></div>
-							<div class="city-item"><a>安徽</a></div>
-							<div class="city-item"><a>浙江</a></div>
-							<div class="city-item"><a>福建</a></div>
-							<div class="city-item"><a>湖北</a></div>
-							<div class="city-item"><a>湖南</a></div>
-							<div class="city-item"><a>广东</a></div>
-							<div class="city-item"><a>广西</a></div>
-							<div class="city-item"><a>江西</a></div>
-							<div class="city-item"><a>四川</a></div>
-							<div class="city-item"><a>海南</a></div>
-							<div class="city-item"><a>贵州</a></div>
-							<div class="city-item"><a>云南</a></div>
-							<div class="city-item"><a>西藏</a></div>
-							<div class="city-item"><a>山西</a></div>
-							<div class="city-item"><a>甘肃</a></div>
-							<div class="city-item"><a>青海</a></div>
-							<div class="city-item"><a>宁夏</a></div>
-							<div class="city-item"><a>新疆</a></div>
-							<div class="city-item"><a>台湾</a></div>
-							<div class="city-item"><a>香港</a></div>
-							<div class="city-item"><a>澳门</a></div>
-							<div class="city-item"><a>钓鱼岛</a></div>
-							<div class="city-item"><a>海外</a></div>
-						</div>
-					</div>
-				</li>
-			</ul>
-			<ul class="top-right">
-				<li class="left">
-					<a>你好，请登录</a>
-					<a><span class="free-reg">免费注册</span></a>
-				</li>
-				<li class="speacer"></li>				
-				<li class="menu"><a>我的订单</a></li>
-				<li class="speacer"></li>
-				<li class="menu">
-						<a>我的京东</a>												
-					<div class="myjd fn-hide">
-						<div class="white"></div>
-						<div class="up-pic">
-							<a>
-								<img src="./img/no-img.jpg">
-							</a>
-						</div>
-						<div class="login"><a>你好，请登录</a></div>
-					<div class="coupon"><a>优惠券</a>&nbsp;&nbsp;丨&nbsp;&nbsp;<a>消息</a></div>
-						<div class="myjd-list">
-							<div class="item"><a>待回复订单</a></div>
-							<div class="item"><a>我的关注</a></div>
-							<div class="item"><a>咨询回复</a></div>
-							<div class="item item-dou"><a>我的京豆</a></div>
-							<div class="item"><a>降价商品</a></div>
-							<div class="item item-licai"><a>我的理财</a></div>
-							<div class="item"><a>返修退换货</a></div>
-							<div class="item"><a>京豆白条</a></div>
-						</div>
-						<div class="myjd-bottom">
-							<h2>我的足迹</h2>
-							<div class="more">
-								<a>更多></a>
-							</div>
-							<div>
-								<a><img src="./img/myjd-iphone.jpg"></a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="speacer"></li>
-				<li class="menu"><a>京东会员</a></li>
-				<li class="speacer"></li>
-				<li class="menu"><a>企业采购</a></li>
-				<li class="speacer"></li>
-				<li class="menu">
-				<a>手机京东</a>
-				<div class="jd-phone fn-hide">
-					<div class="white"></div>
-					<img src="./img/phone.png">
-				</div>
-				</li>
-				<li class="speacer"></li>
-				<li class="menu">
-					<a>关注京东</a>
-					<div class="focus-jd fn-hide">
-						<div class="white"></div>
-						<img src="./img/focus-jd.jpg">
-					</div>
-				</li>
-				<li class="speacer"></li>
-				<li class="menu">
-				<a>客户服务</a>
-				<div class="jd-service fn-hide">
-					<div class="white"></div>
-					<h2>客户</h2>
-					<div class="service-wrap">
-						<div class="fn-left"><a>帮助中心</a></div>						
-						<div class="fn-left"><a>在线客服</a></div>						
-						<div class="fn-left"><a>客服邮箱</a></div>
-						<div class="fn-right"><a>售后服务</a></div>
-						<div class="fn-right"><a>意见建议</a></div>
-					</div>
-					
-					<div class="service-border">
-					 	<h2>商户</h2>
-					 	<div>
-					 		<a>京东商学院</a>
-					 	</div>
-					</div>
-				</div>
-				</li>
-				<li class="speacer"></li>
-				<li class="right-last menu">
-					<a>网站导航</a>
-					<div class="jd-nav fn-hide">
-					<div class="white-2"></div>
-						<div class="nav-1 nav">
-							<h2>特色主题</h2>
-							<div><a>品牌街</a></div>
-							<div><a>好东西</a></div>	
-							<div><a>京东预售</a></div>	
-							<div><a>尖er货</a></div>	
-							<div><a>京东首发</a></div>	
-							<div><a>今日团购</a></div>	
-							<div><a>优惠券</a></div>		
-							<div><a>闪购</a></div>	
-							<div><a>京东会员</a></div>
-							<div><a>天天低价</a></div>	
-							<div><a>定期送</a></div>	
-							<div><a>装机大师</a></div>	
-							<div><a>新奇特</a></div>	
-							<div><a>京东试用</a></div>	
-							<div><a>礼品购</a></div>		
-							<div><a>智能馆</a></div>
-							<div><a>玩bigger</a></div>
-							<div><a>大牌免息</a></div>	
-							<div><a>北京老字号</a></div>	
-						</div>
-						<div class="nav-2 nav">
-							<h2>行业频道</h2>
-							<div class="nav-2-1"><a>服装成</a></div>
-							<div class="nav-2-2"><a>家用电器</a></div>
-							<div class="nav-2-3"><a>电脑办公</a></div>
-							<div class="nav-2-4"><a>手机</a></div>
-							<div class="nav-2-5"><a>美妆馆</a></div>
-							<div class="nav-2-6"><a>食品</a></div>
-							<div class="nav-2-7"><a>数码</a></div>
-							<div class="nav-2-8"><a>母婴</a></div>
-							<div class="nav-2-9"><a>家装城</a></div>
-							<div class="nav-2-10"><a>运动户外</a></div>
-							<div class="nav-2-11"><a>整车</a></div>
-							<div class="nav-2-12"><a>图书</a></div>
-							<div class="nav-2-13"><a>农资频道</a></div>							
-							<div class="nav-2-14"><a>京东智能</a></div>
-						</div>
-						<div class="nav-3 nav">
-							<h2>生活服务</h2>
-							<div class="nav-3-1"><a>京东众筹</a></div>
-							<div class="nav-3-2"><a>白条</a></div>
-							<div class="nav-3-3"><a>京东钱包</a></div>
-							<div class="nav-3-4"><a>京东小金库</a></div>
-							<div class="nav-3-5"><a>理财</a></div>
-							<div class="nav-3-6"><a>话费</a></div>
-							<div class="nav-3-7"><a>旅行</a></div>
-							<div class="nav-3-8"><a>彩票</a></div>
-							<div class="nav-3-9"><a>游戏</a></div>
-							<div class="nav-3-10"><a>机票酒店</a></div>
-							<div class="nav-3-11"><a>电影票</a></div>
-							<div class="nav-3-12"><a>水电煤</a></div>
-							<div class="nav-3-13"><a>京东到家</a></div>							
-							<div class="nav-3-14"><a>京东微联</a></div>
-							<div class="nav-3-15"><a>京东众测</a></div>
-						</div>
-						<div class="nav-4 nav">
-							<h2>更多精选</h2>
-							<div class="nav-4-1"><a>京东社区</a></div>
-							<div class="nav-4-2"><a>京东通信</a></div>
-							<div class="nav-4-3"><a>在线读书</a></div>
-							<div class="nav-4-4"><a>京东E卡</a></div>
-							<div class="nav-4-5"><a>智能社区</a></div>
-							<div class="nav-4-6"><a>游戏社区</a></div>
-							<div class="nav-4-7"><a>京友邦</a></div>
-							<div class="nav-4-8"><a>卖家入住</a></div>
-							<div class="nav-4-9"><a>企业采购</a></div>
-							<div class="nav-4-10"><a>服务市场</a></div>
-							<div class="nav-4-11"><a>乡村招募</a></div>
-							<div class="nav-4-12"><a>校园加盟</a></div>
-							<div class="nav-4-13"><a>办公生活馆</a></div>							
-							<div class="nav-4-14"><a>知识产权维权</a></div>
-							<div class="nav-4-15"><a>English Site</a></div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- 头部导航栏 结束-->
 
+<div id="top" class="w">
+
+    <div class="location fn-left">
+<!--        hover一个父元素后，展示其中一个隐藏的元素，另一个父元素的子元素是显示的元素-->
+        <div class="to-city">
+            送至：天津
+        </div>
+        <div class="allCity fn-hide">
+            <ul>
+                <li><a href="">北京</a></li>
+                <li><a href="">上海</a></li>
+                <li><a href="">天津</a></li>
+                <li><a href="">重庆</a></li>
+                <li><a href="">河北</a></li>
+                <li><a href="">山西</a></li>
+                <li><a href="">河南</a></li>
+                <li><a href="">辽宁</a></li>
+                <li><a href="">吉林</a></li>
+                <li><a href="">黑龙江</a></li>
+                <li><a href="">内蒙古</a></li>
+                <li><a href="">江苏</a></li>
+                <li><a href="">山东</a></li>
+                <li><a href="">安徽</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="fn-right">
+        <ul class="navs fn-right">
+            <li class="web-nav fn-right">
+                <a href="">网站导航</a>
+                <div class="fn-hide">
+                    <ul>
+                        <li class="fn-left">特色主题</li>
+                        <li class="fn-left">行业频道</li>
+                        <li class="fn-left">生活服务</li>
+                        <li class="fn-left">更多精选</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="client-service fn-right">
+                <a href="">客户服务</a>
+                <div class="fn-hide">
+                    <div class="hide-wrap">
+                        客户 <br>商户
+                    </div>
+                </div>
+            </li>
+            <li class="focus_JD fn-right">
+                <a href="">关注京东</a>
+                <div class="fn-hide">
+                    <div class="hide-wrap">
+                        <img src="./img/focus-jd.jpg" alt="">
+                    </div>
+                </div>
+            </li>
+            <li class="fn-right"><a href="">手机京东</a></li>
+            <li class="fn-right"><a href="">企业采购</a></li>
+            <li class="fn-right"><a href="">京东会员</a></li>
+            <li class="fn-right"><a href="">我的京东</a></li>
+            <li class="fn-right"><a href="">我的订单</a></li>
+        </ul>
+        <div class="login_register fn-right">
+            <div class="register fn-right"><a href="">免费注册</a></div>
+            <div class="login fn-right"><a href="">你好，请登录</a></div>
+        </div>
+    </div>
+
+
+</div>
 </body>
 </html>
