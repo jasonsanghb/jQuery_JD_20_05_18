@@ -1,6 +1,5 @@
 $(function() {
     
-    
     // 先获取到所有的img
     var $imgs = $('#nav .lunbo img');
     // 获取到.pics-wrap元素
@@ -11,7 +10,7 @@ $(function() {
     var $allA = $('#nav .lunbo .pointer a');
     var $leftSide = $('#nav .lunbo .left-side')
     var $rightSide = $('#nav .lunbo .right-side')
-    var $rightNavLis = $('#nav .right-nav li')
+    var $rightNavLis = $('#nav .right-nav .bigItem')
     // // 让对应的a激活
     // function activeA(el){
     //     el.addClass('active').siblings('a').removeClass('active');
@@ -111,22 +110,35 @@ $(function() {
     //     toPic(index)
     // })
     
+    // 根据index来改变fn-hide的left值
+    $('#nav .right-nav .fn-hide').each(function(index) {
+    
+        $(this).css('left',-index*63.5+'px')
+    })
     $rightNavLis.on('mouseenter',function() {
 
         // 只有前4个li才有展示隐藏功能的效果
         var index = $(this).index()
+        
         if(index<4){
-            $rightNavLis.children('.fn-hide').show()
+            // 展示向上拉的效果
+            $rightNavLis.children('.options').show().animate({
+                'margin-top':'0'
+            })
+            
+            // 展示对应的smallItem
+            $rightNavLis.find('.smallItem').eq(index).addClass('active').children('.fn-hide').show().end().siblings('.smallItem').removeClass('active').children('.fn-hide').hide()
         }
         
     })
-    $(document).on('click',function(event) {
+    // 当点击页面上的任意区域，下拉展示框，隐藏内容
+    $(document).on('click',function() {
+        $rightNavLis.children('.options').animate({
+            'margin-top':210
+        },function() {
+            $(this).hide()
+        })
         
-        
-        console.log(event.target.className);
-        // if(event.target.className!=='fn-hide'){
-        //     $rightNavLis.children('.fn-hide').hide()
-        // }
     })
     
 });
