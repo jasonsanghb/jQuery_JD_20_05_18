@@ -13,103 +13,103 @@ $(function() {
     var $rightSide = $('#nav .lunbo .right-side')
     var $rightNavLis = $('#nav .right-nav li')
     // // 让对应的a激活
-    // function activeA(el){
-    //     el.addClass('active').siblings('a').removeClass('active');
-    // }
-    // // 让图片马上跳转到对应的index位置 让对应的a激活
-    // function toIndexQuick(index) {
-    //     $picsWrap.css('left',-$picShow.width() * index)
-    //     activeA($allA.eq(index))
-    //
-    // }
-    // // 让图片缓慢跳转到对应index的位置 让对应的a激活
-    // function toIndexSlow(i) {
-    //     $picsWrap.animate({
-    //         left:-$picShow.width() * i
-    //     },1000,function() {
-    //
-    //         if(i===$imgs.length-1){
-    //             index = 0
-    //             $picsWrap.css('left',0)
-    //             activeA($allA.eq(index))
-    //             return
-    //         }
-    //         activeA($allA.eq(i))
-    //
-    //     })
-    // }
-    //
-    // // 根据img的数目来设置.pics-wrap的宽度
-    // $picsWrap.css('width', $imgs.length * $picShow.width());
-    // // 动态设置pointer水平居中
-    // var $pointerLeft = ($picShow.innerWidth() - $pointer.innerWidth()) / 2 + 'px';
-    // $pointer.css('left', $pointerLeft);
-    // // hover .pointer中的a时，会给对应的a添加.active类
-    // $allA.hover(activeA($(this)));
-    // // 设置当前显示的图片索引
-    // var index = 0;
-    // // 设置定时器标志
-    // var timer;
-    // // 设置轮播的功能，让图片动起来
-    // function lunbo() {
-    //         timer = setInterval(function() {
-    //         index = (index + 1) % $imgs.length;
-    //         // 让图片跳转到对应index的位置
-    //             toIndexSlow(index);
-    //
-    //     }, 3000);
-    // }
-    // lunbo()
-    // // 关闭轮播图 马上跳转到对应的图片 然后再开启轮播
-    // function toPic(index){
-    //     // 关闭自动轮播
-    //     clearInterval(timer);
-    //
-    //     // 让图片马上跳转到对应index的位置
-    //     toIndexQuick(index);
-    //
-    //     lunbo()
-    // }
-    //
-    // // 当点击pointer中的a时，跳转到对应的图片
-    // $allA.on('mouseenter', function() {
-    //
-    //     index = $(this).index();
-    //     // 关闭自动轮播
-    //     clearInterval(timer);
-    //
-    //     // 让图片马上到对应index的位置
-    //     toIndexQuick(index);
-    //
-    // });
-    // // 当鼠标mouseenter图片时，停止轮播
-    // $lunbo.on('mouseenter',function() {
-    //     // 关闭自动轮播
-    //     clearInterval(timer);
-    // })
-    // // 当鼠标mouseleave图片时，开始轮播
-    // $lunbo.on('mouseleave',function() {
-    //     lunbo()
-    // })
-    // // 当点击left-side时，跳转到对应的图片
-    // $leftSide.on('click',function() {
-    //
-    //     if(index>0){
-    //         index--
-    //     }else{
-    //         index = $allA.length-1
-    //     }
-    //     toPic(index)
-    // })
-    // $rightSide.on('click',function() {
-    //
-    //     if(index<$allA.length-1){
-    //         index++
-    //     }else{
-    //         index = 0
-    //     }
-    //     toPic(index)
-    // })
+    function activeA(el){
+        el.addClass('active').siblings('a').removeClass('active');
+    }
+    // 让图片马上跳转到对应的index位置 让对应的a激活
+    function toIndexQuick(index) {
+        $picsWrap.css('left',-$picShow.width() * index)
+        activeA($allA.eq(index))
+
+    }
+    // 让图片缓慢跳转到对应index的位置 让对应的a激活
+    function toIndexSlow(i) {
+        $picsWrap.animate({
+            left:-$picShow.width() * i
+        },1000,function() {
+
+            if(i===$imgs.length-1){
+                index = 0
+                $picsWrap.css('left',0)
+                activeA($allA.eq(index))
+                return
+            }
+            activeA($allA.eq(i))
+
+        })
+    }
+
+    // 根据img的数目来设置.pics-wrap的宽度
+    $picsWrap.css('width', $imgs.length * $picShow.width());
+    // 动态设置pointer水平居中
+    var $pointerLeft = ($picShow.innerWidth() - $pointer.innerWidth()) / 2 + 'px';
+    $pointer.css('left', $pointerLeft);
+    // hover .pointer中的a时，会给对应的a添加.active类
+    $allA.hover(activeA($(this)));
+    // 设置当前显示的图片索引
+    var index = 0;
+    // 设置定时器标志
+    var timer;
+    // 设置轮播的功能，让图片动起来
+    function lunbo() {
+            timer = setInterval(function() {
+            index = (index + 1) % $imgs.length;
+            // 让图片跳转到对应index的位置
+                toIndexSlow(index);
+
+        }, 3000);
+    }
+    lunbo()
+    // 关闭轮播图 马上跳转到对应的图片 然后再开启轮播
+    function toPic(index){
+        // 关闭自动轮播
+        clearInterval(timer);
+
+        // 让图片马上跳转到对应index的位置
+        toIndexQuick(index);
+
+        lunbo()
+    }
+
+    // 当点击pointer中的a时，跳转到对应的图片
+    $allA.on('mouseenter', function() {
+
+        index = $(this).index();
+        // 关闭自动轮播
+        clearInterval(timer);
+
+        // 让图片马上到对应index的位置
+        toIndexQuick(index);
+
+    });
+    // 当鼠标mouseenter图片时，停止轮播
+    $lunbo.on('mouseenter',function() {
+        // 关闭自动轮播
+        clearInterval(timer);
+    })
+    // 当鼠标mouseleave图片时，开始轮播
+    $lunbo.on('mouseleave',function() {
+        lunbo()
+    })
+    // 当点击left-side时，跳转到对应的图片
+    $leftSide.on('click',function() {
+
+        if(index>0){
+            index--
+        }else{
+            index = $allA.length-1
+        }
+        toPic(index)
+    })
+    $rightSide.on('click',function() {
+
+        if(index<$allA.length-1){
+            index++
+        }else{
+            index = 0
+        }
+        toPic(index)
+    })
     
     $rightNavLis.on('mouseenter',function() {
 
